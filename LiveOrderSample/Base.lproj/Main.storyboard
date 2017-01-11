@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-M7-li4" customClass="AVPlayerView" customModule="LiveOrderSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-Ge-cxc">
+                                        <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Di-bG8">
+                                                <rect key="frame" x="30" y="35" width="34" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkq-oQ-PXg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-T1-Vsa">
+                                                <rect key="frame" x="305" y="35" width="44" height="30"/>
+                                                <state key="normal" title="Anime"/>
+                                                <connections>
+                                                    <action selector="tapAnimeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVs-E1-caY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="4X9-NN-q9H"/>
+                                            <constraint firstAttribute="bottom" secondItem="405-T1-Vsa" secondAttribute="bottom" constant="35" id="cOy-JH-mK1"/>
+                                            <constraint firstAttribute="trailing" secondItem="405-T1-Vsa" secondAttribute="trailing" constant="26" id="noy-ll-YKy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dWN-Ge-cxc" secondAttribute="bottom" id="KZs-1T-9kw"/>
+                                    <constraint firstItem="dWN-Ge-cxc" firstAttribute="leading" secondItem="Uq8-M7-li4" secondAttribute="leading" id="MAK-VZ-JZA"/>
+                                    <constraint firstAttribute="trailing" secondItem="dWN-Ge-cxc" secondAttribute="trailing" id="yfY-jz-7mU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uq8-M7-li4" secondAttribute="trailing" id="28P-VP-Coc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="bottom" id="ey5-t6-Z28"/>
+                            <constraint firstItem="Uq8-M7-li4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="mEq-3t-vhS"/>
+                            <constraint firstItem="Uq8-M7-li4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pxk-kE-gVg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayerView" destination="Uq8-M7-li4" id="4BE-XD-g7T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16.800000000000001" y="8.5457271364317844"/>
+        </scene>
+    </scenes>
+</document>
