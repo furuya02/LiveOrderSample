@@ -17,6 +17,7 @@
 		D75763751E271DC600593F6F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763741E271DC600593F6F /* MessageView.swift */; };
 		D75763771E272D9500593F6F /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763761E272D9500593F6F /* MessageItemView.swift */; };
 		D757637A1E275BBD00593F6F /* BidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763791E275BBD00593F6F /* BidView.swift */; };
+		D757637C1E278BD000593F6F /* AudienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757637B1E278BD000593F6F /* AudienceView.swift */; };
 		D77CEEEF1E27003900E84C80 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CEEEE1E27003900E84C80 /* LikeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		D75763741E271DC600593F6F /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		D75763761E272D9500593F6F /* MessageItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
 		D75763791E275BBD00593F6F /* BidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidView.swift; sourceTree = "<group>"; };
+		D757637B1E278BD000593F6F /* AudienceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudienceView.swift; sourceTree = "<group>"; };
 		D77CEEEE1E27003900E84C80 /* LikeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				D75763741E271DC600593F6F /* MessageView.swift */,
 				D75763761E272D9500593F6F /* MessageItemView.swift */,
 				D75763791E275BBD00593F6F /* BidView.swift */,
+				D757637B1E278BD000593F6F /* AudienceView.swift */,
 			);
 			path = LiveOrderSample;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				D754A42E1E25E7220086B081 /* VideoView.swift in Sources */,
 				D75763771E272D9500593F6F /* MessageItemView.swift in Sources */,
 				D754A41E1E25DE790086B081 /* ViewController.swift in Sources */,
+				D757637C1E278BD000593F6F /* AudienceView.swift in Sources */,
 				D754A41C1E25DE790086B081 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -271,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

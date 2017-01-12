@@ -42,8 +42,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai9-MF-eqH">
-                                                <rect key="frame" x="172" y="25" width="30" height="30"/>
-                                                <state key="normal" title="Bid"/>
+                                                <rect key="frame" x="137" y="17.5" width="100" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="k38-h0-UkF"/>
+                                                    <constraint firstAttribute="height" constant="45" id="sWl-AE-Cjz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <state key="normal" title="購入"/>
                                                 <connections>
                                                     <action selector="tapBidButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10G-tL-9xf"/>
                                                 </connections>
@@ -60,11 +66,38 @@
                                             <constraint firstItem="ai9-MF-eqH" firstAttribute="centerY" secondItem="dWN-Ge-cxc" secondAttribute="centerY" id="wVS-zK-Yev"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="omN-Yb-cas">
+                                        <rect key="frame" x="107" y="30" width="160" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q1-hY-JHg">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="20.5"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="b3Z-n9-3DM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrN-jB-zra" customClass="AudienceView" customModule="LiveOrderSample" customModuleProvider="target">
+                                                <rect key="frame" x="90" y="0.0" width="70" height="20.5"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="e9d-D2-etk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="omN-Yb-cas" firstAttribute="centerX" secondItem="Uq8-M7-li4" secondAttribute="centerX" id="C7J-ga-Lor"/>
                                     <constraint firstAttribute="bottom" secondItem="dWN-Ge-cxc" secondAttribute="bottom" id="KZs-1T-9kw"/>
                                     <constraint firstItem="dWN-Ge-cxc" firstAttribute="leading" secondItem="Uq8-M7-li4" secondAttribute="leading" id="MAK-VZ-JZA"/>
+                                    <constraint firstItem="omN-Yb-cas" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="top" constant="30" id="rv1-jU-vXU"/>
                                     <constraint firstAttribute="trailing" secondItem="dWN-Ge-cxc" secondAttribute="trailing" id="yfY-jz-7mU"/>
                                 </constraints>
                             </view>
@@ -78,6 +111,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audienceView" destination="VrN-jB-zra" id="Ky6-xm-n9Y"/>
+                        <outlet property="labelLive" destination="2Q1-hY-JHg" id="fZg-Vs-F4q"/>
                         <outlet property="videoView" destination="Uq8-M7-li4" id="mMP-l2-iQ7"/>
                     </connections>
                 </viewController>

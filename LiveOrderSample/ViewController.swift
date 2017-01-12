@@ -12,7 +12,10 @@ import AVFoundation
 class ViewController: UIViewController {
     
 
-    
+    // ライブ表示
+    @IBOutlet weak var labelLive: UILabel!
+    // 視聴者数
+    @IBOutlet weak var audienceView: AudienceView!
     
     // ライブ動画
     @IBOutlet weak var videoView: VideoView!
@@ -42,6 +45,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // LIVE
+        labelLive.layer.cornerRadius = 5
+        labelLive.clipsToBounds = true
 
         // いいね
         likeView = LikeView(frame: CGRect(x: UIScreen.main.bounds.width - likeViewWidth,
@@ -74,6 +81,10 @@ class ViewController: UIViewController {
         messageIndex += 1
         if messageTexts.count <= messageIndex {
             messageIndex = 0
+        }
+        
+        if (arc4random() % 2) == 0 {
+            audienceView.appned() // ランダムに視聴者数を追加する
         }
     }
     

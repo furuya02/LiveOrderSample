@@ -1,0 +1,40 @@
+//
+//  AudienceView.swift
+//  LiveOrderSample
+//
+//  Created by hirauchi.shinichi on 2017/01/12.
+//  Copyright © 2017年 SAPPOROWORKS. All rights reserved.
+//
+
+import UIKit
+
+class AudienceView: UILabel {
+    
+    var counter = 100
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        
+        layer.cornerRadius = 5
+        clipsToBounds = true
+        
+        appned()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    func appned(){
+        counter += 1
+        
+        let attrString = NSMutableAttributedString(string: "")
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "Audience.png")
+        attachment.bounds = CGRect(x: 0, y: -2, width: 19, height: 13)
+        attrString.append(NSAttributedString(attachment: attachment))
+        attrString.append(NSAttributedString(string: "\(counter)"))
+        attributedText = attrString
+    }
+
+}
