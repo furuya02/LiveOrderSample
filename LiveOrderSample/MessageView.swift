@@ -25,7 +25,7 @@ class MessageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        // このビューは、インタラクションを受け取らない
+
         isUserInteractionEnabled = false
         clipsToBounds = true
         

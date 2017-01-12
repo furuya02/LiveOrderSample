@@ -39,6 +39,7 @@ class MessageItemView: UILabel {
         layer.cornerRadius = 5
         clipsToBounds = true
         font = font.withSize(12)
+        alpha = 0.8
         
         move(position:position)
         
@@ -68,7 +69,7 @@ class MessageItemView: UILabel {
             
             position += 1
             
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.move(position:self.position)
                 //self.move(runk: 1)
             }, completion:  { finished in
@@ -82,14 +83,7 @@ class MessageItemView: UILabel {
     }
     
     fileprivate func move(position: Int) {
-        //let y = superFrame.height - CGFloat(position) * lineHeight
-//        self.frame = CGRect(x: superFrame.origin.x + leftMargin, y: superFrame.height - CGFloat(position) * lineHeight, width: lineWidth, height: lineHeight - lineMargin * 2)
         self.frame = CGRect(x: superFrame.origin.x + leftMargin, y: superFrame.height - CGFloat(position) * lineHeight, width: titleWidth, height: lineHeight - lineMargin * 2)
     }
     
-//    fileprivate func move(runk: Int) {
-//        var newFrame = self.frame
-//        newFrame.origin.y -= CGFloat(runk) * self.lineHeight
-//        self.frame = newFrame
-//    }
 }
