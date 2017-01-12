@@ -38,7 +38,7 @@
                                                 <rect key="frame" x="30" y="25" width="34" height="30"/>
                                                 <state key="normal" title="Start"/>
                                                 <connections>
-                                                    <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkq-oQ-PXg"/>
+                                                    <action selector="tapMessageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhL-U2-6Sc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
