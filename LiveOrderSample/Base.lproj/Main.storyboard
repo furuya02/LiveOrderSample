@@ -21,32 +21,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-M7-li4" customClass="AVPlayerView" customModule="LiveOrderSample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-M7-li4" customClass="VideoView" customModule="LiveOrderSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-Ge-cxc">
-                                        <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Di-bG8">
-                                                <rect key="frame" x="30" y="35" width="34" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Start"/>
-                                                <connections>
-                                                    <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkq-oQ-PXg"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-T1-Vsa">
-                                                <rect key="frame" x="305" y="35" width="44" height="30"/>
+                                                <rect key="frame" x="305" y="25" width="44" height="30"/>
                                                 <state key="normal" title="Anime"/>
                                                 <connections>
                                                     <action selector="tapAnimeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVs-E1-caY"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Di-bG8">
+                                                <rect key="frame" x="30" y="25" width="34" height="30"/>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkq-oQ-PXg"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="4X9-NN-q9H"/>
-                                            <constraint firstAttribute="bottom" secondItem="405-T1-Vsa" secondAttribute="bottom" constant="35" id="cOy-JH-mK1"/>
+                                            <constraint firstAttribute="height" constant="80" id="4X9-NN-q9H"/>
+                                            <constraint firstItem="c8v-Di-bG8" firstAttribute="leading" secondItem="dWN-Ge-cxc" secondAttribute="leading" constant="30" id="GQG-my-9fo"/>
+                                            <constraint firstAttribute="bottom" secondItem="405-T1-Vsa" secondAttribute="bottom" constant="25" id="cOy-JH-mK1"/>
+                                            <constraint firstAttribute="bottom" secondItem="c8v-Di-bG8" secondAttribute="bottom" constant="25" id="f40-jK-BOe"/>
                                             <constraint firstAttribute="trailing" secondItem="405-T1-Vsa" secondAttribute="trailing" constant="26" id="noy-ll-YKy"/>
                                         </constraints>
                                     </view>
@@ -68,7 +69,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="videoPlayerView" destination="Uq8-M7-li4" id="4BE-XD-g7T"/>
+                        <outlet property="videoView" destination="Uq8-M7-li4" id="mMP-l2-iQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

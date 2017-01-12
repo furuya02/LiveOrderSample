@@ -11,48 +11,34 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    var playerItem : AVPlayerItem!
-    var videoPlayer : AVPlayer!
+
+    // 「いいね」
+    var likeView: LikeView!
+    let likeViewWidth:CGFloat = 80
     
-    @IBOutlet weak var messageTableView: MessageTableView!
-    @IBOutlet weak var videoPlayerView: AVPlayerView!
+    // 「ライブ動画」
+    @IBOutlet weak var videoView: VideoView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //https://sites.google.com/a/gclue.jp/swift-docs/ni-yinki100-ios/3-avfoundation/006-dong-huano-zai-sheng
-        // online movie
-        let url = NSURL(string: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")
-        let avAsset = AVURLAsset(url: url as! URL)
-        // パスからassetを生成.
-//        let fileURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: "SapporoOffice", ofType: "mov"))
-//        let avAsset = AVURLAsset(url: fileURL as URL, options: nil)
-
-        playerItem = AVPlayerItem(asset: avAsset)
-        videoPlayer = AVPlayer(playerItem: playerItem)
-        let layer = videoPlayerView.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
-        layer.player = videoPlayer
-        self.view.layer.addSublayer(layer)
+        likeView = LikeView(frame: CGRect(x: UIScreen.main.bounds.width - likeViewWidth,
+                                          y: UIScreen.main.bounds.height - likeViewWidth,
+                                      width: likeViewWidth,
+                                     height: likeViewWidth))
+        videoView.addSubview(likeView)
+        videoView.play(url: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")
     }
     
     @IBAction func tapStartButton(_ sender: Any) {
-        videoPlayer.play()
     }
     
     @IBAction func tapAnimeButton(_ sender: Any) {
-        
-        //let image = UIImage(named: "0-09.png")
-        let imageView = BubbleView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-                videoPlayerView.addSubview(imageView)
-        
+        likeView.start()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
