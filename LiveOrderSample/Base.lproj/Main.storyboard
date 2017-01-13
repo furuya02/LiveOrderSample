@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +50,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <state key="normal" title="購入"/>
                                                 <connections>
-                                                    <action selector="tapBidButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10G-tL-9xf"/>
+                                                    <action selector="tapOrderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vy-sq-i0z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -101,10 +100,43 @@
                                     <constraint firstAttribute="trailing" secondItem="dWN-Ge-cxc" secondAttribute="trailing" id="yfY-jz-7mU"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQK-Lj-v7Y" customClass="OrderView" customModule="LiveOrderSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="220" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-y1-aeq">
+                                        <rect key="frame" x="327" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="aV2-S8-pGd"/>
+                                            <constraint firstAttribute="height" constant="40" id="isr-l7-yJg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                        <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="tapOrderCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlY-AS-qeO"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGD-oe-ZWD" customClass="PassTouchesScrollView" customModule="LiveOrderSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="48" width="375" height="152"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lqi-y1-aeq" secondAttribute="trailing" constant="8" id="0X1-pu-a1f"/>
+                                    <constraint firstItem="cGD-oe-ZWD" firstAttribute="top" secondItem="cQK-Lj-v7Y" secondAttribute="top" constant="48" id="4v7-Z6-FNp"/>
+                                    <constraint firstItem="cGD-oe-ZWD" firstAttribute="leading" secondItem="cQK-Lj-v7Y" secondAttribute="leading" id="QVe-ow-MnW"/>
+                                    <constraint firstAttribute="height" constant="200" id="XSR-NV-7Kf"/>
+                                    <constraint firstAttribute="bottom" secondItem="cGD-oe-ZWD" secondAttribute="bottom" id="bxr-9l-PpF"/>
+                                    <constraint firstItem="lqi-y1-aeq" firstAttribute="top" secondItem="cQK-Lj-v7Y" secondAttribute="top" constant="8" id="eTx-0q-EO5"/>
+                                    <constraint firstAttribute="trailing" secondItem="cGD-oe-ZWD" secondAttribute="trailing" id="qf0-of-7cq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Uq8-M7-li4" secondAttribute="trailing" id="28P-VP-Coc"/>
+                            <constraint firstItem="cQK-Lj-v7Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="2vh-wd-IwL"/>
+                            <constraint firstAttribute="trailing" secondItem="cQK-Lj-v7Y" secondAttribute="trailing" id="8hd-e3-kOH"/>
+                            <constraint firstItem="cQK-Lj-v7Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OQa-mb-zJ7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="bottom" id="ey5-t6-Z28"/>
                             <constraint firstItem="Uq8-M7-li4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="mEq-3t-vhS"/>
                             <constraint firstItem="Uq8-M7-li4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pxk-kE-gVg"/>
@@ -113,6 +145,7 @@
                     <connections>
                         <outlet property="audienceView" destination="VrN-jB-zra" id="Ky6-xm-n9Y"/>
                         <outlet property="labelLive" destination="2Q1-hY-JHg" id="fZg-Vs-F4q"/>
+                        <outlet property="orderView" destination="cQK-Lj-v7Y" id="DdN-FA-4DR"/>
                         <outlet property="videoView" destination="Uq8-M7-li4" id="mMP-l2-iQ7"/>
                     </connections>
                 </viewController>

@@ -29,13 +29,14 @@ class VideoView : UIView{
         return AVPlayerLayer.self
     }
 
-    func play(url:String){
-        playerItem = AVPlayerItem(asset: AVURLAsset(url: URL(string: url)!))
+    func play(url:URL){
+        playerItem = AVPlayerItem(asset: AVURLAsset(url: url))
         videoPlayer = AVPlayer(playerItem: playerItem)
         let layer = self.layer as! AVPlayerLayer
         layer.videoGravity = AVLayerVideoGravityResizeAspect
         layer.player = videoPlayer
         videoPlayer.play()
     }
+
     
 }

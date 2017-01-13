@@ -11,7 +11,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-
+    // オーダー画面
+    @IBOutlet weak var orderView: OrderView!
+    
     // ライブ表示
     @IBOutlet weak var labelLive: UILabel!
     // 視聴者数
@@ -70,7 +72,13 @@ class ViewController: UIViewController {
         videoView.addSubview(bidView)
         
         // ライブ動画再生
-        videoView.play(url: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")
+        // videoView.play(url: URL(string: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")!)
+        // ダウンロードするとAWS利用料がかかるのでローカルのファイルを再生する
+        videoView.play(url: Bundle.main.url(forResource: "source-512k", withExtension: "mp4")!)
+        
+        //AVURLAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
+
+        
         
         // プレゼン
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateLow), userInfo: nil, repeats: true)
@@ -104,8 +112,12 @@ class ViewController: UIViewController {
     
     @IBAction func tapMessageButton(_ sender: Any) {
     }
-    
-    @IBAction func tapBidButton(_ sender: Any) {
+
+    @IBAction func tapOrderButton(_ sender: Any) {
+        orderView.fadeIn()
+    }
+    @IBAction func tapOrderCloseButton(_ sender: Any) {
+        orderView.fadeOut()
     }
 
     @IBAction func tapAnimeButton(_ sender: Any) {
