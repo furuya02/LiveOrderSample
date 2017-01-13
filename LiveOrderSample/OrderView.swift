@@ -33,9 +33,7 @@ class OrderView: UIView {
         super.init(frame: frame)
     }
     
-    
     func fadeIn() {
-
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.frame = CGRect(x: 0, y: Int(UIScreen.main.bounds.height) - self.height, width: Int(UIScreen.main.bounds.width), height: self.height)
         }, completion: nil)
@@ -48,7 +46,6 @@ class OrderView: UIView {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch \((touches.first?.view?.tag)!)")
         let index = (touches.first?.view?.tag)!
         if index != 0 {
             let orgFrame = self.imageViews[index-1].frame
@@ -63,19 +60,13 @@ class OrderView: UIView {
             })
         }
     }
-
-    
     
     fileprivate func setImage(scrollView: UIScrollView) {
-        
-        //scrollView.isUserInteractionEnabled = false // スクロールビューはイベントを受け取らない
 
         let contentView = UIView()
- 
         let baseSize: CGFloat = 110
         let space: CGFloat = 20
         var offSet: CGFloat = space
-//        let borderWidth: CGFloat = 3
 
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
@@ -95,9 +86,6 @@ class OrderView: UIView {
             }
             imageView.isUserInteractionEnabled = true // イメージビューはイベントを受け取る
             imageView.tag = i+1; // デフォルト値の0と区別するためにindex値は1以上とする
-//            if i == 0 { // ボーダーを表示する場合
-//                imageView.layer.borderWidth = borderWidth;
-//            }
             imageView.layer.borderColor = UIColor.red.cgColor
             contentView.addSubview(imageView)
             imageViews.append(imageView)
@@ -108,6 +96,7 @@ class OrderView: UIView {
     }
 }
 
+// タッチイベントをイメージビューに送るためにUIIcroolViewを拡張する
 class PassTouchesScrollView:UIScrollView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.next?.touchesEnded(touches, with: event)

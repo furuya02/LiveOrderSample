@@ -76,10 +76,6 @@ class ViewController: UIViewController {
         // ダウンロードするとAWS利用料がかかるのでローカルのファイルを再生する
         videoView.play(url: Bundle.main.url(forResource: "source-512k", withExtension: "mp4")!)
         
-        //AVURLAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-
-        
-        
         // プレゼン
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateLow), userInfo: nil, repeats: true)
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(ViewController.updateHigh), userInfo: nil, repeats: true)
@@ -94,9 +90,9 @@ class ViewController: UIViewController {
             let (text,sw) = bidData.get()
             bidView.appned(text: text, sw:sw)
         }
-        
     }
-    
+
+    // プレゼン
     func updateHigh() {
         if likeData.get() {
             self.likeView.start()
@@ -106,11 +102,11 @@ class ViewController: UIViewController {
             let (text,name,color) = messageData.get()
             self.messageView.appned(name: name, color: color, text: text)
         }
-
-
     }
     
     @IBAction func tapMessageButton(_ sender: Any) {
+        let (text,name,color) = messageData.get()
+        self.messageView.appned(name: name, color: color, text: text)
     }
 
     @IBAction func tapOrderButton(_ sender: Any) {

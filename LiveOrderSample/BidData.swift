@@ -12,7 +12,6 @@ class BidData {
     
     fileprivate let data = ["赤色を購入します。1,280円","Type-B 決めました。14,000円","青色を購入します。 20,000円","赤色を購入します。1,280円","赤色を購入します。1,280円"]
     fileprivate let sw = [false,false,true,false,false]
-//    fileprivate let color = [UIColor.red,UIColor.blue,UIColor.red,UIColor.yellow,UIColor.orange,UIColor.red,UIColor.green]
     
     fileprivate var index = -1
     
