@@ -33,7 +33,7 @@ class LikeItemView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         superFrame = frame
-        image = UIImage(named: "Like00\(Int(arc4random() % 5))")
+        image = UIImage(named: String(format: "Like%03d", Int(arc4random() % 14)))
         contentMode = .scaleAspectFill
     }
     

@@ -26,11 +26,6 @@ class ViewController: UIViewController {
     // メッセージ
     var messageView: MessageView!
     let messageViewHeight:CGFloat = 130
-    
-    let messageTexts = ["こんにちは、これは良いですね！","良いですね","^^)/","ヽ(｀▽´)/　ぜひ欲しいデす","これは欲しいです","んっ","安いと思います！！！"]
-    let messageNames = ["佐久間町のゴルゴ１４","Hapy","山田太郎","ClassMethod","大きな声では言えません","^^)","XXX"]
-    let messageColors = [UIColor.red,UIColor.blue,UIColor.red,UIColor.yellow,UIColor.orange,UIColor.red,UIColor.green]
-    var messageIndex = 0
 
     // 「いいね」
     var likeView: LikeView!
@@ -39,9 +34,12 @@ class ViewController: UIViewController {
     // 落札
     var bidView: BidView!
     let bidViewHeight:CGFloat = 30
-    let bidTexts = ["2,000円で入札","14,000円で入札","20,000円で落札"]
-    let bidSws = [false,false,true]
-    var bidIndex = 0
+    
+    // プレゼン用データ
+    let audienceData = AudienceData()
+    let likeData = LikeData()
+    let messageData = MessageData()
+    let bidData = BidData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,33 +71,46 @@ class ViewController: UIViewController {
         
         // ライブ動画再生
         videoView.play(url: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")
+        
+        // プレゼン
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateLow), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(ViewController.updateHigh), userInfo: nil, repeats: true)
+        
     }
-    var debug = 0
     
-    @IBAction func tapMessageButton(_ sender: Any) {
-        messageView.appned(name: messageNames[messageIndex], color: messageColors[messageIndex], text: messageTexts[messageIndex])
-        messageIndex += 1
-        if messageTexts.count <= messageIndex {
-            messageIndex = 0
+    // プレゼン
+    func updateLow() {
+        audienceView.count = audienceData.get()
+
+        if (arc4random() % 3) == 0 {
+            let (text,sw) = bidData.get()
+            bidView.appned(text: text, sw:sw)
         }
         
-        if (arc4random() % 2) == 0 {
-            audienceView.appned() // ランダムに視聴者数を追加する
+    }
+    
+    func updateHigh() {
+        if likeData.get() {
+            self.likeView.start()
         }
+        
+        if (arc4random() % 3) == 0 {
+            let (text,name,color) = messageData.get()
+            self.messageView.appned(name: name, color: color, text: text)
+        }
+
+
+    }
+    
+    @IBAction func tapMessageButton(_ sender: Any) {
     }
     
     @IBAction func tapBidButton(_ sender: Any) {
-        bidView.appned(text: bidTexts[bidIndex], sw: bidSws[bidIndex])
-        bidIndex += 1
-        if bidTexts.count <= bidIndex {
-            bidIndex = 0
-        }
     }
 
     @IBAction func tapAnimeButton(_ sender: Any) {
         likeView.start()
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
