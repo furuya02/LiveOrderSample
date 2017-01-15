@@ -33,9 +33,13 @@ class ViewController: UIViewController {
     var likeView: LikeView!
     let likeViewWidth:CGFloat = 80
     
-    // 落札
+    // 購入
     var bidView: BidView!
     let bidViewHeight:CGFloat = 30
+    
+    // プロダクト
+    var productView: ProductView!
+    let productViewHeight:CGFloat = 70
     
     // プレゼン用データ
     let audienceData = AudienceData()
@@ -45,6 +49,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+ 
+        // プロダクト
+        productView = ProductView(frame:CGRect(x: 0,
+                                               y: 50,
+                                           width: UIScreen.main.bounds.width,
+                                          height: productViewHeight))
+        videoView.addSubview(productView)
         
         // LIVE
         labelLive.layer.cornerRadius = 5

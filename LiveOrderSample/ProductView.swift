@@ -10,12 +10,27 @@ import UIKit
 
 class ProductView: UIView {
 
+    let items:[ProductItemView] = []
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        var width = 70
+        var margin = 5
+        var offset = margin
+        for i in 0..<4 {
+            let image = UIImage(named: "Product00\(i)");
+            
+            let item = ProductItemView(frame: CGRect(x: offset, y: 0, width: width, height: Int(frame.height)), image: image!)
+            addSubview(item)
+            
+            //items.append(item)
+            offset += width + margin
+        }
         
         //isUserInteractionEnabled = false
         //clipsToBounds = true

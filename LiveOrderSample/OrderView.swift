@@ -19,7 +19,6 @@ class OrderView: UIView {
         // Autolayout無効
         translatesAutoresizingMaskIntoConstraints = true
         backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        //alpha = 0.7
         frame = CGRect(x: 0, y: Int(UIScreen.main.bounds.height), width: Int(UIScreen.main.bounds.width), height: height)
 
         // ScrollViewの検索と、イメージの追加
@@ -43,6 +42,10 @@ class OrderView: UIView {
     func fadeOut() {
         UIView.animate(withDuration: 0.3, animations: {
             self.frame = CGRect(x: 0, y: Int(UIScreen.main.bounds.height), width: Int(UIScreen.main.bounds.width), height: self.height)
+        }, completion: { finished in
+            for image in self.imageViews {
+                image.alpha = 1;
+            }
         })
     }
     
@@ -53,7 +56,12 @@ class OrderView: UIView {
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
                 let newFrame = CGRect(x: orgFrame.origin.x-20, y: orgFrame.origin.y - 20, width: orgFrame.width + 40, height: orgFrame.height + 40)
                 self.imageViews[index-1].frame = newFrame
-                self.imageViews[index-1].layer.borderWidth = 5;
+                self.imageViews[index-1].layer.borderWidth = 8;
+                for (i,image) in self.imageViews.enumerated() {
+                    if index - 1 != i {
+                        image.alpha = 0;
+                    }
+                }
             }, completion: { finished in
                 self.fadeOut()
                 self.imageViews[index-1].frame = orgFrame
@@ -68,7 +76,6 @@ class OrderView: UIView {
         let baseSize: CGFloat = 110
         let space: CGFloat = 20
         var offSet: CGFloat = space
-
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
         for i in 0..<4 {
@@ -88,11 +95,8 @@ class OrderView: UIView {
             imageView.isUserInteractionEnabled = true // イメージビューはイベントを受け取る
             imageView.tag = i+1; // デフォルト値の0と区別するためにindex値は1以上とする
             imageView.layer.borderColor = UIColor.red.cgColor
-            
             imageView.layer.cornerRadius = 8
             imageView.layer.masksToBounds = true
-            
-            
             contentView.addSubview(imageView)
             imageViews.append(imageView)
         }
