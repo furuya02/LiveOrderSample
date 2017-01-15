@@ -18,7 +18,8 @@ class OrderView: UIView {
 
         // Autolayout無効
         translatesAutoresizingMaskIntoConstraints = true
-        alpha = 0.9
+        backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        //alpha = 0.7
         frame = CGRect(x: 0, y: Int(UIScreen.main.bounds.height), width: Int(UIScreen.main.bounds.width), height: height)
 
         // ScrollViewの検索と、イメージの追加
@@ -87,6 +88,11 @@ class OrderView: UIView {
             imageView.isUserInteractionEnabled = true // イメージビューはイベントを受け取る
             imageView.tag = i+1; // デフォルト値の0と区別するためにindex値は1以上とする
             imageView.layer.borderColor = UIColor.red.cgColor
+            
+            imageView.layer.cornerRadius = 8
+            imageView.layer.masksToBounds = true
+            
+            
             contentView.addSubview(imageView)
             imageViews.append(imageView)
         }

@@ -30,7 +30,7 @@ class AudienceView: UILabel {
             let attrString = NSMutableAttributedString(string: "")
             let attachment = NSTextAttachment()
             attachment.image = UIImage(named: "Audience.png")
-            attachment.bounds = CGRect(x: 0, y: -2, width: 19, height: 13)
+            attachment.bounds = CGRect(x: 0, y: 0, width: 19, height: 13)
             attrString.append(NSAttributedString(attachment: attachment))
             attrString.append(NSAttributedString(string: "\(count)"))
             attributedText = attrString

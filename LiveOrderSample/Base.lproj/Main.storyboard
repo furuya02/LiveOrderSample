@@ -26,31 +26,51 @@
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-Ge-cxc">
                                         <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-T1-Vsa">
-                                                <rect key="frame" x="305" y="25" width="44" height="30"/>
-                                                <state key="normal" title="Anime"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-T1-Vsa">
+                                                <rect key="frame" x="289" y="15" width="60" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="4rT-LH-rqN"/>
+                                                    <constraint firstAttribute="height" constant="50" id="YwD-IP-9Oq"/>
+                                                </constraints>
+                                                <state key="normal" image="Like"/>
                                                 <connections>
                                                     <action selector="tapAnimeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVs-E1-caY"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Di-bG8">
-                                                <rect key="frame" x="30" y="25" width="62" height="30"/>
-                                                <state key="normal" title="Message"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Di-bG8">
+                                                <rect key="frame" x="30" y="15" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="W52-Uc-Eoz"/>
+                                                    <constraint firstAttribute="width" constant="50" id="vuO-fx-rKh"/>
+                                                </constraints>
+                                                <state key="normal" title="Message" image="message"/>
                                                 <connections>
                                                     <action selector="tapMessageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhL-U2-6Sc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai9-MF-eqH">
-                                                <rect key="frame" x="137" y="17.5" width="100" height="45"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGM-ec-CfU" customClass="RoundedCornersButton" customModule="LiveOrderSample" customModuleProvider="target">
+                                                <rect key="frame" x="137" y="15" width="100" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="k38-h0-UkF"/>
-                                                    <constraint firstAttribute="height" constant="45" id="sWl-AE-Cjz"/>
+                                                    <constraint firstAttribute="width" constant="100" id="UFq-7Q-TWx"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Vg2-NR-H9D"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                <state key="normal" title="購入"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                                <state key="normal" title="購入">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tapOrderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vy-sq-i0z"/>
+                                                    <action selector="tapOrderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsr-Wl-hAb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -58,15 +78,15 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="4X9-NN-q9H"/>
                                             <constraint firstItem="c8v-Di-bG8" firstAttribute="leading" secondItem="dWN-Ge-cxc" secondAttribute="leading" constant="30" id="GQG-my-9fo"/>
-                                            <constraint firstItem="ai9-MF-eqH" firstAttribute="centerX" secondItem="dWN-Ge-cxc" secondAttribute="centerX" id="axA-eK-pis"/>
-                                            <constraint firstAttribute="bottom" secondItem="405-T1-Vsa" secondAttribute="bottom" constant="25" id="cOy-JH-mK1"/>
-                                            <constraint firstAttribute="bottom" secondItem="c8v-Di-bG8" secondAttribute="bottom" constant="25" id="f40-jK-BOe"/>
+                                            <constraint firstItem="oGM-ec-CfU" firstAttribute="centerX" secondItem="dWN-Ge-cxc" secondAttribute="centerX" id="PxN-6J-gV0"/>
+                                            <constraint firstAttribute="bottom" secondItem="405-T1-Vsa" secondAttribute="bottom" constant="15" id="cOy-JH-mK1"/>
+                                            <constraint firstAttribute="bottom" secondItem="c8v-Di-bG8" secondAttribute="bottom" constant="15" id="f40-jK-BOe"/>
                                             <constraint firstAttribute="trailing" secondItem="405-T1-Vsa" secondAttribute="trailing" constant="26" id="noy-ll-YKy"/>
-                                            <constraint firstItem="ai9-MF-eqH" firstAttribute="centerY" secondItem="dWN-Ge-cxc" secondAttribute="centerY" id="wVS-zK-Yev"/>
+                                            <constraint firstItem="oGM-ec-CfU" firstAttribute="centerY" secondItem="dWN-Ge-cxc" secondAttribute="centerY" id="sLg-Pr-2Rx"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="omN-Yb-cas">
-                                        <rect key="frame" x="107" y="30" width="160" height="20.5"/>
+                                        <rect key="frame" x="107" y="20" width="160" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q1-hY-JHg">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="20.5"/>
@@ -96,21 +116,20 @@
                                     <constraint firstItem="omN-Yb-cas" firstAttribute="centerX" secondItem="Uq8-M7-li4" secondAttribute="centerX" id="C7J-ga-Lor"/>
                                     <constraint firstAttribute="bottom" secondItem="dWN-Ge-cxc" secondAttribute="bottom" id="KZs-1T-9kw"/>
                                     <constraint firstItem="dWN-Ge-cxc" firstAttribute="leading" secondItem="Uq8-M7-li4" secondAttribute="leading" id="MAK-VZ-JZA"/>
-                                    <constraint firstItem="omN-Yb-cas" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="top" constant="30" id="rv1-jU-vXU"/>
+                                    <constraint firstItem="omN-Yb-cas" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="top" constant="20" id="rv1-jU-vXU"/>
                                     <constraint firstAttribute="trailing" secondItem="dWN-Ge-cxc" secondAttribute="trailing" id="yfY-jz-7mU"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQK-Lj-v7Y" customClass="OrderView" customModule="LiveOrderSample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQK-Lj-v7Y" customClass="OrderView" customModule="LiveOrderSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="220" width="375" height="200"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-y1-aeq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-y1-aeq">
                                         <rect key="frame" x="327" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="aV2-S8-pGd"/>
                                             <constraint firstAttribute="height" constant="40" id="isr-l7-yJg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                        <state key="normal" title="×"/>
+                                        <state key="normal" image="Close"/>
                                         <connections>
                                             <action selector="tapOrderCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlY-AS-qeO"/>
                                         </connections>
@@ -154,4 +173,9 @@
             <point key="canvasLocation" x="-16.800000000000001" y="8.5457271364317844"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Close" width="100" height="97"/>
+        <image name="Like" width="208" height="175"/>
+        <image name="message" width="372" height="350"/>
+    </resources>
 </document>

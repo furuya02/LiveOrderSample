@@ -112,6 +112,7 @@ class ViewController: UIViewController {
     @IBAction func tapOrderButton(_ sender: Any) {
         orderView.fadeIn()
     }
+    
     @IBAction func tapOrderCloseButton(_ sender: Any) {
         orderView.fadeOut()
     }
