@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     let likeData = LikeData()
     let messageData = MessageData()
     let bidData = BidData()
+    let productData = ProductData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,12 +108,15 @@ class ViewController: UIViewController {
     // プレゼン
     func updateHigh() {
         if likeData.get() {
-            self.likeView.start()
+            likeView.start()
         }
+        
+        let n = productData.get()
+        productView.incrementCounter(index: n)
         
         if (arc4random() % 3) == 0 {
             let (text,name,color) = messageData.get()
-            self.messageView.appned(name: name, color: color, text: text)
+            messageView.appned(name: name, color: color, text: text)
         }
     }
     
@@ -130,6 +134,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapAnimeButton(_ sender: Any) {
+        productView.incrementCounter(index: 0)
+        
         likeView.start()
     }
 

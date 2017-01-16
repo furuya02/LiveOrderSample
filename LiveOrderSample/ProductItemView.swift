@@ -10,6 +10,13 @@ import UIKit
 
 class ProductItemView: UIView {
 
+    var count = 100
+    
+    fileprivate var label: UILabel!
+    
+    fileprivate var numberImages:[UIImage] = []
+    fileprivate var counterView: CounterView!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
@@ -23,7 +30,11 @@ class ProductItemView: UIView {
         
         backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         layer.cornerRadius = 8
-        //layer.masksToBounds = true
+        
+        for i in 0 ..< 10 {
+            let image = UIImage(named: "\(i)")
+            numberImages.append(image!)
+        }
 
         // 商品画像
         let margin:CGFloat = 5
@@ -35,32 +46,17 @@ class ProductItemView: UIView {
         
         // カウンター
         let height  = frame.height / 3
-        let counterView = UIView(frame: CGRect(x: 0, y: height * 2, width: frame.width, height: height))
+        counterView = CounterView(frame: CGRect(x: 0, y: height * 2, width: frame.width, height: height))
         counterView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         counterView.layer.cornerRadius = 4
-        //counterView.layer.masksToBounds = true
         addSubview(counterView)
         
-        let label = UILabel(frame: CGRect(x: 0, y:-40, width: frame.width, height: height + 60))
-        label.textColor = UIColor.white
-        label.textAlignment = .center
-        label.text = "100"
-        label.baselineAdjustment = .alignCenters
-        counterView.addSubview(label)
-        
-        
-        let attrText = NSMutableAttributedString(string: "120")
-        attrText.addAttributes([NSBaselineOffsetAttributeName:-10], range: NSMakeRange(2, 1))
-        attrText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 60)], range: NSMakeRange(2, 1))
-        attrText.addAttributes([NSStrokeWidthAttributeName: -5] ,range: NSMakeRange(2, 1))
-        attrText.addAttributes([NSStrokeColorAttributeName: UIColor.black], range: NSMakeRange(2, 1))
-        label.attributedText = attrText
-        
     }
-
-    func setCounter(count: Int){
-        
-        
+    func incrementCounter(){
+        count += 1
+        if count >= 1000 {
+            count = 500
+        }
+        counterView.setNum(num: count)
     }
-    
 }
