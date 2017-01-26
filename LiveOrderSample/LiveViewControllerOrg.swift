@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class LiveViewController: UIViewController {
+class LiveViewControllerOrg: UIViewController {
     
     // オーダー画面
     @IBOutlet weak var orderView: OrderView!
@@ -94,8 +94,8 @@ class LiveViewController: UIViewController {
         videoView.play(url: (channel?.url)!)
         
         // プレゼン
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LiveViewController.updateLow), userInfo: nil, repeats: true)
-        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(LiveViewController.updateHigh), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(LiveViewControllerOrg.updateLow), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(LiveViewControllerOrg.updateHigh), userInfo: nil, repeats: true)
         
     }
     
@@ -124,6 +124,7 @@ class LiveViewController: UIViewController {
         }
     }
     @IBAction func tapCloseButton(_ sender: Any) {
+        videoView.stop()
         dismiss(animated: true, completion: nil)
     }
     

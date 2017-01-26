@@ -37,6 +37,11 @@ class VideoView : UIView{
         layer.player = videoPlayer
         videoPlayer.play()
     }
+    
+    func stop() {
+        videoPlayer = nil
+        playerItem = nil
+    }
 
     
 }

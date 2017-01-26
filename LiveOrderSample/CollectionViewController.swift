@@ -52,7 +52,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == segueName) {
-            (segue.destination as? LiveViewController)!.channel = channel
+            (segue.destination as? LiveViewControllerOrg)!.channel = channel
         }
     }
 
