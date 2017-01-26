@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dgp-BK-4eV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LiveViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -110,12 +110,25 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-7s-VPT">
+                                        <rect key="frame" x="330" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="B6h-y1-TZv"/>
+                                            <constraint firstAttribute="height" constant="30" id="dmQ-zh-ifC"/>
+                                        </constraints>
+                                        <state key="normal" image="close_thin"/>
+                                        <connections>
+                                            <action selector="tapCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uad-F7-Eng"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="EAZ-7s-VPT" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="top" constant="15" id="2F2-Qm-Bl2"/>
                                     <constraint firstItem="omN-Yb-cas" firstAttribute="centerX" secondItem="Uq8-M7-li4" secondAttribute="centerX" id="C7J-ga-Lor"/>
                                     <constraint firstAttribute="bottom" secondItem="dWN-Ge-cxc" secondAttribute="bottom" id="KZs-1T-9kw"/>
                                     <constraint firstItem="dWN-Ge-cxc" firstAttribute="leading" secondItem="Uq8-M7-li4" secondAttribute="leading" id="MAK-VZ-JZA"/>
+                                    <constraint firstAttribute="trailing" secondItem="EAZ-7s-VPT" secondAttribute="trailing" constant="15" id="alO-U2-6CK"/>
                                     <constraint firstItem="omN-Yb-cas" firstAttribute="top" secondItem="Uq8-M7-li4" secondAttribute="top" constant="20" id="rv1-jU-vXU"/>
                                     <constraint firstAttribute="trailing" secondItem="dWN-Ge-cxc" secondAttribute="trailing" id="yfY-jz-7mU"/>
                                 </constraints>
@@ -170,12 +183,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16.800000000000001" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="1304.8" y="-0.44977511244377816"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="AvF-Us-Y77">
+            <objects>
+                <collectionViewController id="NJO-DR-RXV" customClass="CollectionViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="p78-6Y-Res">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="1fJ-Rh-CvZ" customClass="CollectionViewFlowLayout" customModule="LiveOrderSample" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xwC-IO-hI4">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NJO-DR-RXV" id="FLj-7w-7Tx"/>
+                            <outlet property="delegate" destination="NJO-DR-RXV" id="AX8-Tp-B9l"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="PJR-dC-Sye"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLiveViewController" id="WHr-Cf-sY7"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhW-7B-q9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242.40000000000001" y="8.5457271364317844"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QkD-5r-mCK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dgp-BK-4eV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tb8-Ma-883">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NJO-DR-RXV" kind="relationship" relationship="rootViewController" id="di8-0K-rhO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2o-DN-hL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="18"/>
         </scene>
     </scenes>
     <resources>
         <image name="Close" width="100" height="97"/>
         <image name="Like" width="208" height="175"/>
+        <image name="close_thin" width="111" height="111"/>
         <image name="message" width="372" height="350"/>
     </resources>
 </document>
