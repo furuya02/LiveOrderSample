@@ -11,9 +11,11 @@ import UIKit
 class Channel {
     
     let url: URL!
+    let title: String!
     
-    init(url:URL) {
+    init(url:URL, title: String) {
         self.url = url
+        self.title = title
     }
 }
 

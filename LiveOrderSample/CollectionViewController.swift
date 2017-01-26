@@ -18,13 +18,18 @@ class CollectionViewController: UICollectionViewController {
     let segueName = "toLiveViewController"
     var channel: Channel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1 ... 9 {
+        
+        let titles = ["商品の説明","商品の説明","商品の説明","商品の説明","商品の説明","商品の説明","商品の説明","商品の説明","商品の説明"]
+        
+        for i in 0 ..< 9 {
             // URL(string: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")!
-            let filename = "bijin00\(i)"
-            let channel = Channel(url: Bundle.main.url(forResource: filename, withExtension: "mp4")!)
+            let filename = "bijin00\(i+1)"
+            let channel = Channel(url: Bundle.main.url(forResource: filename, withExtension: "mp4")!,title: titles[i])
             channels.append(channel)
         }
         
@@ -33,7 +38,7 @@ class CollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -71,11 +76,8 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-        cell.backgroundColor = UIColor.blue
-    
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
+        cell.setChannel(channel: channels[indexPath.row])
         return cell
     }
 
