@@ -22,6 +22,7 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         for i in 1 ... 9 {
+            // URL(string: "http://live-order.s3-website-ap-northeast-1.amazonaws.com/index.m3u8")!
             let filename = "bijin00\(i)"
             let channel = Channel(url: Bundle.main.url(forResource: filename, withExtension: "mp4")!)
             channels.append(channel)
@@ -52,7 +53,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == segueName) {
-            (segue.destination as? LiveViewControllerOrg)!.channel = channel
+            (segue.destination as? LiveViewController)!.channel = channel
         }
     }
 

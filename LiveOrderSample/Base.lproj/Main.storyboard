@@ -183,12 +183,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.8" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1756" y="-167"/>
         </scene>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="xKW-vZ-Ll8">
             <objects>
-                <viewController id="xpp-rd-E2D" sceneMemberID="viewController">
+                <viewController id="xpp-rd-E2D" customClass="LiveViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JZe-R8-DPm"/>
                         <viewControllerLayoutGuide type="bottom" id="xnk-0h-HHa"/>
@@ -196,30 +196,180 @@
                     <view key="view" contentMode="scaleToFill" id="1ac-7r-FbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-ps-LlI">
+                                <rect key="frame" x="325" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="3IT-H6-RZH"/>
+                                    <constraint firstAttribute="height" constant="35" id="Xsh-pF-he3"/>
+                                </constraints>
+                                <state key="normal" image="close_thin"/>
+                                <connections>
+                                    <action selector="tapCloseButton:" destination="xpp-rd-E2D" eventType="touchUpInside" id="cO1-3V-Ndb"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xeu-Dn-giu">
+                                <rect key="frame" x="107" y="20" width="160" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcJ-a4-6ui">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="20.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="y67-4I-V3L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uY-Vd-DGM" customClass="AudienceView" customModule="LiveOrderSample" customModuleProvider="target">
+                                        <rect key="frame" x="90" y="0.0" width="70" height="20.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="6Pg-Mw-1qW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-YZ-KzC">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-MJ-D42">
+                                        <rect key="frame" x="289" y="15" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jBk-nz-IC9"/>
+                                            <constraint firstAttribute="width" constant="60" id="wru-Mm-BtJ"/>
+                                        </constraints>
+                                        <state key="normal" image="Like"/>
+                                        <connections>
+                                            <action selector="tapAnimeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6m-x9-6TI"/>
+                                            <action selector="tapLikeButton:" destination="xpp-rd-E2D" eventType="touchUpInside" id="mVc-c3-esM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yC-2A-LJd">
+                                        <rect key="frame" x="30" y="15" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="8hU-tE-NCm"/>
+                                            <constraint firstAttribute="height" constant="50" id="DWj-Dh-e8V"/>
+                                        </constraints>
+                                        <state key="normal" title="Message" image="message"/>
+                                        <connections>
+                                            <action selector="tapMessageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LtA-za-5RJ"/>
+                                            <action selector="tapMessageButton:" destination="xpp-rd-E2D" eventType="touchUpInside" id="fwQ-YR-f4I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-rd-sqs" customClass="RoundedCornersButton" customModule="LiveOrderSample" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="15" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dXw-Mi-o3z"/>
+                                            <constraint firstAttribute="width" constant="100" id="rPu-nN-cUf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <state key="normal" title="購入">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapOrderButton:" destination="xpp-rd-E2D" eventType="touchUpInside" id="HLN-g1-kZn"/>
+                                            <action selector="tapOrderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f5B-1l-mBA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hWL-MJ-D42" secondAttribute="trailing" constant="26" id="BsQ-ia-zUp"/>
+                                    <constraint firstAttribute="height" constant="80" id="T5X-2k-qce"/>
+                                    <constraint firstItem="hWL-MJ-D42" firstAttribute="centerY" secondItem="dQC-YZ-KzC" secondAttribute="centerY" id="Zao-J9-Ho9"/>
+                                    <constraint firstItem="0yC-2A-LJd" firstAttribute="centerY" secondItem="dQC-YZ-KzC" secondAttribute="centerY" id="k32-ow-rpA"/>
+                                    <constraint firstItem="9NZ-rd-sqs" firstAttribute="centerY" secondItem="dQC-YZ-KzC" secondAttribute="centerY" id="rIP-En-g7O"/>
+                                    <constraint firstItem="9NZ-rd-sqs" firstAttribute="centerX" secondItem="dQC-YZ-KzC" secondAttribute="centerX" id="wA0-HT-OxL"/>
+                                    <constraint firstItem="0yC-2A-LJd" firstAttribute="leading" secondItem="dQC-YZ-KzC" secondAttribute="leading" constant="30" id="yYM-dm-8GM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugY-r7-Bta" customClass="OrderView" customModule="LiveOrderSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="155" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-iG-H9R">
+                                        <rect key="frame" x="327" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="4ws-vL-KdZ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ZRU-Yw-tcM"/>
+                                            <constraint firstAttribute="height" constant="40" id="y3c-Bz-UY7"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="zQG-9x-RDo"/>
+                                        </constraints>
+                                        <state key="normal" image="Close"/>
+                                        <connections>
+                                            <action selector="tapOrderCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJi-zC-OxR"/>
+                                            <action selector="tapOrderCloseButton:" destination="xpp-rd-E2D" eventType="touchUpInside" id="dpF-vq-YK0"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4V-eJ-RSz" customClass="PassTouchesScrollView" customModule="LiveOrderSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="48" width="375" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aFc-iG-H9R" secondAttribute="trailing" constant="8" id="FQ9-On-OJu"/>
+                                    <constraint firstAttribute="height" constant="200" id="LUN-NI-p4D"/>
+                                    <constraint firstItem="aFc-iG-H9R" firstAttribute="top" secondItem="ugY-r7-Bta" secondAttribute="top" constant="8" id="U6s-fR-IJw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xeu-Dn-giu" firstAttribute="centerX" secondItem="1ac-7r-FbK" secondAttribute="centerX" id="0Mz-2p-ux8"/>
+                            <constraint firstItem="oeg-ps-LlI" firstAttribute="top" secondItem="JZe-R8-DPm" secondAttribute="bottom" id="0jK-k1-bn0"/>
+                            <constraint firstAttribute="trailing" secondItem="oeg-ps-LlI" secondAttribute="trailing" constant="15" id="2Z6-Kw-wV9"/>
+                            <constraint firstItem="Xeu-Dn-giu" firstAttribute="top" secondItem="JZe-R8-DPm" secondAttribute="bottom" id="5Hy-Bm-ezD"/>
+                            <constraint firstItem="ugY-r7-Bta" firstAttribute="leading" secondItem="1ac-7r-FbK" secondAttribute="leading" id="ETo-ch-rXV"/>
+                            <constraint firstAttribute="trailing" secondItem="dQC-YZ-KzC" secondAttribute="trailing" id="TAO-NT-bOp"/>
+                            <constraint firstItem="dQC-YZ-KzC" firstAttribute="leading" secondItem="1ac-7r-FbK" secondAttribute="leading" id="Uyv-jr-rXg"/>
+                            <constraint firstItem="ugY-r7-Bta" firstAttribute="top" secondItem="1ac-7r-FbK" secondAttribute="top" constant="155" id="VaN-1u-Irp"/>
+                            <constraint firstAttribute="trailing" secondItem="ugY-r7-Bta" secondAttribute="trailing" id="mFb-kw-93a"/>
+                            <constraint firstItem="xnk-0h-HHa" firstAttribute="top" secondItem="dQC-YZ-KzC" secondAttribute="bottom" id="oko-cI-T3X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="audienceView" destination="5uY-Vd-DGM" id="v55-nl-kEH"/>
+                        <outlet property="liveView" destination="BcJ-a4-6ui" id="A5b-aw-uEQ"/>
+                        <outlet property="orderView" destination="ugY-r7-Bta" id="kff-7R-d6R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRJ-GW-SMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="161"/>
+            <point key="canvasLocation" x="943" y="224"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="AvF-Us-Y77">
             <objects>
                 <collectionViewController id="NJO-DR-RXV" customClass="CollectionViewController" customModule="LiveOrderSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="p78-6Y-Res">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="p78-6Y-Res">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="1fJ-Rh-CvZ" customClass="CollectionViewFlowLayout" customModule="LiveOrderSample" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xwC-IO-hI4">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="86" y="0.0" width="79" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="79" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <size key="customSize" width="79" height="75"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -229,7 +379,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="PJR-dC-Sye"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLiveViewController" id="WHr-Cf-sY7"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLiveViewControllerOrg" id="WHr-Cf-sY7"/>
+                        <segue destination="xpp-rd-E2D" kind="presentation" identifier="toLiveViewController" id="Wqh-ws-hHo"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhW-7B-q9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,13 +390,17 @@
         <!--Navigation Controller-->
         <scene sceneID="QkD-5r-mCK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dgp-BK-4eV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="dgp-BK-4eV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tb8-Ma-883">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="HwW-7D-XxM">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="NJO-DR-RXV" kind="relationship" relationship="rootViewController" id="di8-0K-rhO"/>
                     </connections>

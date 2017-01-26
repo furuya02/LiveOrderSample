@@ -24,6 +24,7 @@
 		D752D7381E398D2C00A7F598 /* bijin003.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D752D7371E398D2C00A7F598 /* bijin003.mp4 */; };
 		D752D73A1E398D3400A7F598 /* bijin002.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D752D7391E398D3400A7F598 /* bijin002.mp4 */; };
 		D752D73C1E398D3C00A7F598 /* bijin001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D752D73B1E398D3C00A7F598 /* bijin001.mp4 */; };
+		D752D73E1E3995EB00A7F598 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D752D73D1E3995EB00A7F598 /* LiveViewController.swift */; };
 		D754A41C1E25DE790086B081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754A41B1E25DE790086B081 /* AppDelegate.swift */; };
 		D754A41E1E25DE790086B081 /* LiveViewControllerOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754A41D1E25DE790086B081 /* LiveViewControllerOrg.swift */; };
 		D754A4211E25DE790086B081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754A41F1E25DE790086B081 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		D752D7371E398D2C00A7F598 /* bijin003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bijin003.mp4; sourceTree = "<group>"; };
 		D752D7391E398D3400A7F598 /* bijin002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bijin002.mp4; sourceTree = "<group>"; };
 		D752D73B1E398D3C00A7F598 /* bijin001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bijin001.mp4; sourceTree = "<group>"; };
+		D752D73D1E3995EB00A7F598 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		D754A4181E25DE790086B081 /* LiveOrderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveOrderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D754A41B1E25DE790086B081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D754A41D1E25DE790086B081 /* LiveViewControllerOrg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewControllerOrg.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D754A41D1E25DE790086B081 /* LiveViewControllerOrg.swift */,
+				D752D73D1E3995EB00A7F598 /* LiveViewController.swift */,
 				D75A2C221E2C68FA004659A5 /* CounterView.swift */,
 				D79320151E28B39000443406 /* ProductView.swift */,
 				D75A2C201E2AF838004659A5 /* ProductItemView.swift */,
@@ -276,6 +279,7 @@
 				D77CEEEF1E27003900E84C80 /* LikeView.swift in Sources */,
 				D706EFAA1E285D1D003A3A59 /* LikeData.swift in Sources */,
 				D752D7251E3976E700A7F598 /* CollectionViewController.swift in Sources */,
+				D752D73E1E3995EB00A7F598 /* LiveViewController.swift in Sources */,
 				D757637A1E275BBD00593F6F /* BidView.swift in Sources */,
 				D75A2C211E2AF838004659A5 /* ProductItemView.swift in Sources */,
 				D71D3EE01E26174B0090F4BD /* LikeItemView.swift in Sources */,
